@@ -1,6 +1,6 @@
 /*
  * This file is part of  DungeonBlocks.
- * Copyright (c) 2021 Mark Gottschling (gottsch)
+ * Copyright (c) 2023 Mark Gottschling (gottsch)
  *
  * All rights reserved.
  *
@@ -21,15 +21,13 @@ package mod.gottsch.fabric.dungeonblocks.core;
 
 import mod.gottsch.fabric.dungeonblocks.core.setup.Registration;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ *
+ */
 public class DungeonBlocks implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("dungeonblocks");
 
 	public static final String MOD_ID = "dungeonblocks";

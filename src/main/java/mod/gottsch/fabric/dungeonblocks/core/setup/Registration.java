@@ -27,6 +27,8 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.Material;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -311,16 +313,227 @@ public class Registration {
     public static final Block CRACKED_DEEPSLATE_TILES_DOUBLE_SILL = new DoubleSillBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_TILES).requiresTool());
 
     // cornice
+    public static final Block STONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool());
+    public static final Block  SMOOTH_STONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE).requiresTool());
+    public static final Block COBBLESTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).requiresTool());
+    public static final Block MOSSY_COBBLESTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE).requiresTool());
+    public static final Block BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.BRICKS).requiresTool());
+    public static final Block STONE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).requiresTool());
+    public static final Block MOSSY_STONE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICKS).requiresTool());
+    public static final Block CRACKED_STONE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_STONE_BRICKS).requiresTool());
+    public static final Block CHISELED_STONE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_STONE_BRICKS).requiresTool());
+    public static final Block OBSIDIAN_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool());
+
+    public static final Block SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE).requiresTool());
+    public static final Block SMOOTH_SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).requiresTool());
+    public static final Block CHISELED_SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE).requiresTool());
+    public static final Block CUT_SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).requiresTool());
+    public static final Block RED_SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.RED_SANDSTONE).requiresTool());
+    public static final Block SMOOTH_RED_SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_RED_SANDSTONE).requiresTool());
+    public static final Block CHISELED_RED_SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_RED_SANDSTONE).requiresTool());
+    public static final Block CUT_RED_SANDSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CUT_RED_SANDSTONE).requiresTool());
+
+    public static final Block GRANITE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool());
+    public static final Block POLISHED_GRANITE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool());
+    public static final Block DIORITE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).requiresTool());
+    public static final Block POLISHED_DIORITE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DIORITE).requiresTool());
+    public static final Block ANDESITE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE).requiresTool());
+    public static final Block POLISHED_ANDESITE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE).requiresTool());
+
+    public static final Block BLACKSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE).requiresTool());
+    public static final Block CHISELED_POLISHED_BLACKSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_POLISHED_BLACKSTONE).requiresTool());
+    public static final Block GILDED_BLACKSTONE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.GILDED_BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE_BRICKS).requiresTool());
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).requiresTool());
+
+    public static final Block DEEPSLATE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICKS).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_BRICKS_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_BRICKS).requiresTool());
+    public static final Block COBBLED_DEEPSLATE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.COBBLED_DEEPSLATE).requiresTool());
+    public static final Block POLISHED_DEEPSLATE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE).requiresTool());
+    public static final Block CHISELED_DEEPSLATE_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_TILES_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_TILES).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_TILES_CORNICE = new CorniceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_TILES).requiresTool());
 
     // crown molding
+    public static final Block STONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool());
+    public static final Block  SMOOTH_STONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE).requiresTool());
+    public static final Block COBBLESTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).requiresTool());
+    public static final Block MOSSY_COBBLESTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE).requiresTool());
+    public static final Block BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.BRICKS).requiresTool());
+    public static final Block STONE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).requiresTool());
+    public static final Block MOSSY_STONE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICKS).requiresTool());
+    public static final Block CRACKED_STONE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_STONE_BRICKS).requiresTool());
+    public static final Block CHISELED_STONE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_STONE_BRICKS).requiresTool());
+    public static final Block OBSIDIAN_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool());
+
+    public static final Block SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE).requiresTool());
+    public static final Block SMOOTH_SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).requiresTool());
+    public static final Block CHISELED_SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE).requiresTool());
+    public static final Block CUT_SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).requiresTool());
+    public static final Block RED_SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.RED_SANDSTONE).requiresTool());
+    public static final Block SMOOTH_RED_SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_RED_SANDSTONE).requiresTool());
+    public static final Block CHISELED_RED_SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_RED_SANDSTONE).requiresTool());
+    public static final Block CUT_RED_SANDSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CUT_RED_SANDSTONE).requiresTool());
+
+    public static final Block GRANITE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool());
+    public static final Block POLISHED_GRANITE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool());
+    public static final Block DIORITE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).requiresTool());
+    public static final Block POLISHED_DIORITE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DIORITE).requiresTool());
+    public static final Block ANDESITE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE).requiresTool());
+    public static final Block POLISHED_ANDESITE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE).requiresTool());
+
+    public static final Block BLACKSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE).requiresTool());
+    public static final Block CHISELED_POLISHED_BLACKSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_POLISHED_BLACKSTONE).requiresTool());
+    public static final Block GILDED_BLACKSTONE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.GILDED_BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE_BRICKS).requiresTool());
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).requiresTool());
+
+    public static final Block DEEPSLATE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICKS).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_BRICKS_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_BRICKS).requiresTool());
+    public static final Block COBBLED_DEEPSLATE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.COBBLED_DEEPSLATE).requiresTool());
+    public static final Block POLISHED_DEEPSLATE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE).requiresTool());
+    public static final Block CHISELED_DEEPSLATE_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_TILES_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_TILES).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_TILES_CROWN_MOLDING = new CrownMoldingBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_TILES).requiresTool());
 
     // pillar base
+    public static final Block STONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool());
+    public static final Block  SMOOTH_STONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE).requiresTool());
+    public static final Block COBBLESTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).requiresTool());
+    public static final Block MOSSY_COBBLESTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE).requiresTool());
+    public static final Block BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.BRICKS).requiresTool());
+    public static final Block STONE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).requiresTool());
+    public static final Block MOSSY_STONE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICKS).requiresTool());
+    public static final Block CRACKED_STONE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_STONE_BRICKS).requiresTool());
+    public static final Block CHISELED_STONE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_STONE_BRICKS).requiresTool());
+    public static final Block OBSIDIAN_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool());
+
+    public static final Block SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE).requiresTool());
+    public static final Block SMOOTH_SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).requiresTool());
+    public static final Block CHISELED_SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE).requiresTool());
+    public static final Block CUT_SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).requiresTool());
+    public static final Block RED_SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.RED_SANDSTONE).requiresTool());
+    public static final Block SMOOTH_RED_SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_RED_SANDSTONE).requiresTool());
+    public static final Block CHISELED_RED_SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_RED_SANDSTONE).requiresTool());
+    public static final Block CUT_RED_SANDSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CUT_RED_SANDSTONE).requiresTool());
+
+    public static final Block GRANITE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool());
+    public static final Block POLISHED_GRANITE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool());
+    public static final Block DIORITE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).requiresTool());
+    public static final Block POLISHED_DIORITE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DIORITE).requiresTool());
+    public static final Block ANDESITE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE).requiresTool());
+    public static final Block POLISHED_ANDESITE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE).requiresTool());
+
+    public static final Block BLACKSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE).requiresTool());
+    public static final Block CHISELED_POLISHED_BLACKSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_POLISHED_BLACKSTONE).requiresTool());
+    public static final Block GILDED_BLACKSTONE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.GILDED_BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE_BRICKS).requiresTool());
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).requiresTool());
+
+    public static final Block DEEPSLATE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICKS).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_BRICKS_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_BRICKS).requiresTool());
+    public static final Block COBBLED_DEEPSLATE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.COBBLED_DEEPSLATE).requiresTool());
+    public static final Block POLISHED_DEEPSLATE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE).requiresTool());
+    public static final Block CHISELED_DEEPSLATE_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_TILES_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_TILES).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_TILES_PILLAR_BASE = new PillarBaseBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_TILES).requiresTool());
 
     // pillar
+    public static final Block STONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool());
+    public static final Block  SMOOTH_STONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE).requiresTool());
+    public static final Block COBBLESTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).requiresTool());
+    public static final Block MOSSY_COBBLESTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE).requiresTool());
+    public static final Block BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.BRICKS).requiresTool());
+    public static final Block STONE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).requiresTool());
+    public static final Block MOSSY_STONE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICKS).requiresTool());
+    public static final Block CRACKED_STONE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_STONE_BRICKS).requiresTool());
+    public static final Block CHISELED_STONE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_STONE_BRICKS).requiresTool());
+    public static final Block OBSIDIAN_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool());
+
+    public static final Block SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE).requiresTool());
+    public static final Block SMOOTH_SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).requiresTool());
+    public static final Block CHISELED_SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE).requiresTool());
+    public static final Block CUT_SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).requiresTool());
+    public static final Block RED_SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.RED_SANDSTONE).requiresTool());
+    public static final Block SMOOTH_RED_SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_RED_SANDSTONE).requiresTool());
+    public static final Block CHISELED_RED_SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_RED_SANDSTONE).requiresTool());
+    public static final Block CUT_RED_SANDSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CUT_RED_SANDSTONE).requiresTool());
+
+    public static final Block GRANITE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool());
+    public static final Block POLISHED_GRANITE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool());
+    public static final Block DIORITE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).requiresTool());
+    public static final Block POLISHED_DIORITE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DIORITE).requiresTool());
+    public static final Block ANDESITE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE).requiresTool());
+    public static final Block POLISHED_ANDESITE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE).requiresTool());
+
+    public static final Block BLACKSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE).requiresTool());
+    public static final Block CHISELED_POLISHED_BLACKSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_POLISHED_BLACKSTONE).requiresTool());
+    public static final Block GILDED_BLACKSTONE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.GILDED_BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE_BRICKS).requiresTool());
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).requiresTool());
+
+    public static final Block DEEPSLATE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICKS).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_BRICKS_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_BRICKS).requiresTool());
+    public static final Block COBBLED_DEEPSLATE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.COBBLED_DEEPSLATE).requiresTool());
+    public static final Block POLISHED_DEEPSLATE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE).requiresTool());
+    public static final Block CHISELED_DEEPSLATE_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_TILES_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_TILES).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_TILES_PILLAR = new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_TILES).requiresTool());
 
     // wall sconce
+    public static final Block STONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool());
+    public static final Block  SMOOTH_STONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE).requiresTool());
+    public static final Block COBBLESTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).requiresTool());
+    public static final Block MOSSY_COBBLESTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE).requiresTool());
+    public static final Block BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.BRICKS).requiresTool());
+    public static final Block STONE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).requiresTool());
+    public static final Block MOSSY_STONE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICKS).requiresTool());
+    public static final Block CRACKED_STONE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_STONE_BRICKS).requiresTool());
+    public static final Block CHISELED_STONE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_STONE_BRICKS).requiresTool());
+    public static final Block OBSIDIAN_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool());
+
+    public static final Block SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE).requiresTool());
+    public static final Block SMOOTH_SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).requiresTool());
+    public static final Block CHISELED_SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE).requiresTool());
+    public static final Block CUT_SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).requiresTool());
+    public static final Block RED_SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.RED_SANDSTONE).requiresTool());
+    public static final Block SMOOTH_RED_SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_RED_SANDSTONE).requiresTool());
+    public static final Block CHISELED_RED_SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_RED_SANDSTONE).requiresTool());
+    public static final Block CUT_RED_SANDSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CUT_RED_SANDSTONE).requiresTool());
+
+    public static final Block GRANITE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool());
+    public static final Block POLISHED_GRANITE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool());
+    public static final Block DIORITE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).requiresTool());
+    public static final Block POLISHED_DIORITE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DIORITE).requiresTool());
+    public static final Block ANDESITE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE).requiresTool());
+    public static final Block POLISHED_ANDESITE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE).requiresTool());
+
+    public static final Block BLACKSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE).requiresTool());
+    public static final Block CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_POLISHED_BLACKSTONE).requiresTool());
+    public static final Block GILDED_BLACKSTONE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.GILDED_BLACKSTONE).requiresTool());
+    public static final Block POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE_BRICKS).requiresTool());
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).requiresTool());
+
+    public static final Block DEEPSLATE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICKS).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_BRICKS).requiresTool());
+    public static final Block COBBLED_DEEPSLATE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.COBBLED_DEEPSLATE).requiresTool());
+    public static final Block POLISHED_DEEPSLATE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE).requiresTool());
+    public static final Block CHISELED_DEEPSLATE_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_DEEPSLATE).requiresTool());
+    public static final Block DEEPSLATE_TILES_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_TILES).requiresTool());
+    public static final Block CRACKED_DEEPSLATE_TILES_WALL_SCONCE = new SconceBlock(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_TILES).requiresTool());
 
     // grate
+    public static final Block GRATE = new GrateBlock(FabricBlockSettings.of(Material.METAL, MapColor.BLACK).strength(1.5F, 6.0F).requiresTool());
 
     /**
      *
@@ -595,16 +808,227 @@ public class Registration {
         Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_DOUBLE_SILL), COBBLED_DEEPSLATE_DOUBLE_SILL);
 
         // cornice
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_CORNICE), STONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_CORNICE), SMOOTH_STONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_CORNICE), COBBLESTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_CORNICE), MOSSY_COBBLESTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_CORNICE), BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_CORNICE), STONE_BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_CORNICE), MOSSY_STONE_BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_CORNICE), CRACKED_STONE_BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_CORNICE), CHISELED_STONE_BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_CORNICE), OBSIDIAN_CORNICE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_CORNICE), SANDSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_CORNICE), SMOOTH_SANDSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_CORNICE), CHISELED_SANDSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_CORNICE), CUT_SANDSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_CORNICE), RED_SANDSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_CORNICE), SMOOTH_RED_SANDSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_CORNICE), CHISELED_RED_SANDSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_CORNICE), CUT_RED_SANDSTONE_CORNICE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_CORNICE), GRANITE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_CORNICE), POLISHED_GRANITE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_CORNICE), DIORITE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_CORNICE), POLISHED_DIORITE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_CORNICE), ANDESITE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_CORNICE), POLISHED_ANDESITE_CORNICE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_CORNICE), BLACKSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_CORNICE), POLISHED_BLACKSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_CORNICE), CHISELED_POLISHED_BLACKSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_CORNICE), GILDED_BLACKSTONE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_CORNICE), POLISHED_BLACKSTONE_BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_CORNICE), CRACKED_POLISHED_BLACKSTONE_BRICKS_CORNICE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_CORNICE), DEEPSLATE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_CORNICE), DEEPSLATE_BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_CORNICE), DEEPSLATE_TILES_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_CORNICE), POLISHED_DEEPSLATE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_CORNICE), CHISELED_DEEPSLATE_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_CORNICE), CRACKED_DEEPSLATE_BRICKS_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_CORNICE), CRACKED_DEEPSLATE_TILES_CORNICE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_CORNICE), COBBLED_DEEPSLATE_CORNICE);
 
         // crown molding
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_CROWN_MOLDING), STONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_CROWN_MOLDING), SMOOTH_STONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_CROWN_MOLDING), COBBLESTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_CROWN_MOLDING), MOSSY_COBBLESTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_CROWN_MOLDING), BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_CROWN_MOLDING), STONE_BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_CROWN_MOLDING), MOSSY_STONE_BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_CROWN_MOLDING), CRACKED_STONE_BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_CROWN_MOLDING), CHISELED_STONE_BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_CROWN_MOLDING), OBSIDIAN_CROWN_MOLDING);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_CROWN_MOLDING), SANDSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_CROWN_MOLDING), SMOOTH_SANDSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_CROWN_MOLDING), CHISELED_SANDSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_CROWN_MOLDING), CUT_SANDSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_CROWN_MOLDING), RED_SANDSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_CROWN_MOLDING), SMOOTH_RED_SANDSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_CROWN_MOLDING), CHISELED_RED_SANDSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_CROWN_MOLDING), CUT_RED_SANDSTONE_CROWN_MOLDING);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_CROWN_MOLDING), GRANITE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_CROWN_MOLDING), POLISHED_GRANITE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_CROWN_MOLDING), DIORITE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_CROWN_MOLDING), POLISHED_DIORITE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_CROWN_MOLDING), ANDESITE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_CROWN_MOLDING), POLISHED_ANDESITE_CROWN_MOLDING);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_CROWN_MOLDING), BLACKSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_CROWN_MOLDING), POLISHED_BLACKSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_CROWN_MOLDING), CHISELED_POLISHED_BLACKSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_CROWN_MOLDING), GILDED_BLACKSTONE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING), POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING), CRACKED_POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_CROWN_MOLDING), DEEPSLATE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_CROWN_MOLDING), DEEPSLATE_BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_CROWN_MOLDING), DEEPSLATE_TILES_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_CROWN_MOLDING), POLISHED_DEEPSLATE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_CROWN_MOLDING), CHISELED_DEEPSLATE_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_CROWN_MOLDING), CRACKED_DEEPSLATE_BRICKS_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_CROWN_MOLDING), CRACKED_DEEPSLATE_TILES_CROWN_MOLDING);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_CROWN_MOLDING), COBBLED_DEEPSLATE_CROWN_MOLDING);
 
         // pillar base
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_PILLAR_BASE), STONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_PILLAR_BASE), SMOOTH_STONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_PILLAR_BASE), COBBLESTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_PILLAR_BASE), MOSSY_COBBLESTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_PILLAR_BASE), BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_PILLAR_BASE), STONE_BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_PILLAR_BASE), MOSSY_STONE_BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_PILLAR_BASE), CRACKED_STONE_BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_PILLAR_BASE), CHISELED_STONE_BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_PILLAR_BASE), OBSIDIAN_PILLAR_BASE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_PILLAR_BASE), SANDSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_PILLAR_BASE), SMOOTH_SANDSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_PILLAR_BASE), CHISELED_SANDSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_PILLAR_BASE), CUT_SANDSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_PILLAR_BASE), RED_SANDSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_PILLAR_BASE), SMOOTH_RED_SANDSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_PILLAR_BASE), CHISELED_RED_SANDSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_PILLAR_BASE), CUT_RED_SANDSTONE_PILLAR_BASE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_PILLAR_BASE), GRANITE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_PILLAR_BASE), POLISHED_GRANITE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_PILLAR_BASE), DIORITE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_PILLAR_BASE), POLISHED_DIORITE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_PILLAR_BASE), ANDESITE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_PILLAR_BASE), POLISHED_ANDESITE_PILLAR_BASE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_PILLAR_BASE), BLACKSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_PILLAR_BASE), POLISHED_BLACKSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_PILLAR_BASE), CHISELED_POLISHED_BLACKSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_PILLAR_BASE), GILDED_BLACKSTONE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE), POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE), CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_PILLAR_BASE), DEEPSLATE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_PILLAR_BASE), DEEPSLATE_BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_PILLAR_BASE), DEEPSLATE_TILES_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_PILLAR_BASE), POLISHED_DEEPSLATE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_PILLAR_BASE), CHISELED_DEEPSLATE_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_PILLAR_BASE), CRACKED_DEEPSLATE_BRICKS_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_PILLAR_BASE), CRACKED_DEEPSLATE_TILES_PILLAR_BASE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_PILLAR_BASE), COBBLED_DEEPSLATE_PILLAR_BASE);
 
         // pillar
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_PILLAR), STONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_PILLAR), SMOOTH_STONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_PILLAR), COBBLESTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_PILLAR), MOSSY_COBBLESTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_PILLAR), BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_PILLAR), STONE_BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_PILLAR), MOSSY_STONE_BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_PILLAR), CRACKED_STONE_BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_PILLAR), CHISELED_STONE_BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_PILLAR), OBSIDIAN_PILLAR);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_PILLAR), SANDSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_PILLAR), SMOOTH_SANDSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_PILLAR), CHISELED_SANDSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_PILLAR), CUT_SANDSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_PILLAR), RED_SANDSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_PILLAR), SMOOTH_RED_SANDSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_PILLAR), CHISELED_RED_SANDSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_PILLAR), CUT_RED_SANDSTONE_PILLAR);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_PILLAR), GRANITE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_PILLAR), POLISHED_GRANITE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_PILLAR), DIORITE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_PILLAR), POLISHED_DIORITE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_PILLAR), ANDESITE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_PILLAR), POLISHED_ANDESITE_PILLAR);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_PILLAR), BLACKSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_PILLAR), POLISHED_BLACKSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_PILLAR), CHISELED_POLISHED_BLACKSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_PILLAR), GILDED_BLACKSTONE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_PILLAR), POLISHED_BLACKSTONE_BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR), CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_PILLAR), DEEPSLATE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_PILLAR), DEEPSLATE_BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_PILLAR), DEEPSLATE_TILES_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_PILLAR), POLISHED_DEEPSLATE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_PILLAR), CHISELED_DEEPSLATE_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_PILLAR), CRACKED_DEEPSLATE_BRICKS_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_PILLAR), CRACKED_DEEPSLATE_TILES_PILLAR);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_PILLAR), COBBLED_DEEPSLATE_PILLAR);
 
         // wall sconce
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_WALL_SCONCE), STONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_WALL_SCONCE), SMOOTH_STONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_WALL_SCONCE), COBBLESTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_WALL_SCONCE), MOSSY_COBBLESTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_WALL_SCONCE), BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_WALL_SCONCE), STONE_BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_WALL_SCONCE), MOSSY_STONE_BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_WALL_SCONCE), CRACKED_STONE_BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_WALL_SCONCE), CHISELED_STONE_BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_WALL_SCONCE), OBSIDIAN_WALL_SCONCE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_WALL_SCONCE), SANDSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_WALL_SCONCE), SMOOTH_SANDSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_WALL_SCONCE), CHISELED_SANDSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_WALL_SCONCE), CUT_SANDSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_WALL_SCONCE), RED_SANDSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_WALL_SCONCE), SMOOTH_RED_SANDSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_WALL_SCONCE), CHISELED_RED_SANDSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_WALL_SCONCE), CUT_RED_SANDSTONE_WALL_SCONCE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_WALL_SCONCE), GRANITE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_WALL_SCONCE), POLISHED_GRANITE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_WALL_SCONCE), DIORITE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_WALL_SCONCE), POLISHED_DIORITE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_WALL_SCONCE), ANDESITE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_WALL_SCONCE), POLISHED_ANDESITE_WALL_SCONCE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_WALL_SCONCE), BLACKSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_WALL_SCONCE), POLISHED_BLACKSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE), CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_WALL_SCONCE), GILDED_BLACKSTONE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE), POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE), CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE);
+
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_WALL_SCONCE), DEEPSLATE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_WALL_SCONCE), DEEPSLATE_BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_WALL_SCONCE), DEEPSLATE_TILES_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_WALL_SCONCE), POLISHED_DEEPSLATE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_WALL_SCONCE), CHISELED_DEEPSLATE_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE), CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_WALL_SCONCE), CRACKED_DEEPSLATE_TILES_WALL_SCONCE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_WALL_SCONCE), COBBLED_DEEPSLATE_WALL_SCONCE);
 
         // grate
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, ID.GRATE), GRATE);
 
         /*
          * register items
@@ -874,15 +1298,227 @@ public class Registration {
         Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_DOUBLE_SILL), new BlockItem(COBBLED_DEEPSLATE_DOUBLE_SILL, new FabricItemSettings().group(ITEM_GROUP)));
 
         // cornice
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_CORNICE), new BlockItem(STONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_CORNICE), new BlockItem(SMOOTH_STONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_CORNICE), new BlockItem(COBBLESTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_CORNICE), new BlockItem(MOSSY_COBBLESTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_CORNICE), new BlockItem(BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_CORNICE), new BlockItem(STONE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_CORNICE), new BlockItem(MOSSY_STONE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_CORNICE), new BlockItem(CRACKED_STONE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_CORNICE), new BlockItem(CHISELED_STONE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_CORNICE), new BlockItem(OBSIDIAN_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_CORNICE), new BlockItem(SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_CORNICE), new BlockItem(SMOOTH_SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_CORNICE), new BlockItem(CHISELED_SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_CORNICE), new BlockItem(CUT_SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_CORNICE), new BlockItem(RED_SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_CORNICE), new BlockItem(SMOOTH_RED_SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_CORNICE), new BlockItem(CHISELED_RED_SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_CORNICE), new BlockItem(CUT_RED_SANDSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_CORNICE), new BlockItem(GRANITE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_CORNICE), new BlockItem(POLISHED_GRANITE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_CORNICE), new BlockItem(DIORITE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_CORNICE), new BlockItem(POLISHED_DIORITE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_CORNICE), new BlockItem(ANDESITE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_CORNICE), new BlockItem(POLISHED_ANDESITE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_CORNICE), new BlockItem(BLACKSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_CORNICE), new BlockItem(POLISHED_BLACKSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_CORNICE), new BlockItem(CHISELED_POLISHED_BLACKSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_CORNICE), new BlockItem(GILDED_BLACKSTONE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_CORNICE), new BlockItem(POLISHED_BLACKSTONE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_CORNICE), new BlockItem(CRACKED_POLISHED_BLACKSTONE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_CORNICE), new BlockItem(DEEPSLATE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_CORNICE), new BlockItem(DEEPSLATE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_CORNICE), new BlockItem(DEEPSLATE_TILES_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_CORNICE), new BlockItem(POLISHED_DEEPSLATE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_CORNICE), new BlockItem(CHISELED_DEEPSLATE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_CORNICE), new BlockItem(CRACKED_DEEPSLATE_BRICKS_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_CORNICE), new BlockItem(CRACKED_DEEPSLATE_TILES_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_CORNICE), new BlockItem(COBBLED_DEEPSLATE_CORNICE, new FabricItemSettings().group(ITEM_GROUP)));
 
         // crown molding
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_CROWN_MOLDING), new BlockItem(STONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_CROWN_MOLDING), new BlockItem(SMOOTH_STONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_CROWN_MOLDING), new BlockItem(COBBLESTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_CROWN_MOLDING), new BlockItem(MOSSY_COBBLESTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_CROWN_MOLDING), new BlockItem(BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_CROWN_MOLDING), new BlockItem(STONE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_CROWN_MOLDING), new BlockItem(MOSSY_STONE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_CROWN_MOLDING), new BlockItem(CRACKED_STONE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_CROWN_MOLDING), new BlockItem(CHISELED_STONE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_CROWN_MOLDING), new BlockItem(OBSIDIAN_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_CROWN_MOLDING), new BlockItem(SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_CROWN_MOLDING), new BlockItem(SMOOTH_SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_CROWN_MOLDING), new BlockItem(CHISELED_SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_CROWN_MOLDING), new BlockItem(CUT_SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_CROWN_MOLDING), new BlockItem(RED_SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_CROWN_MOLDING), new BlockItem(SMOOTH_RED_SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_CROWN_MOLDING), new BlockItem(CHISELED_RED_SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_CROWN_MOLDING), new BlockItem(CUT_RED_SANDSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_CROWN_MOLDING), new BlockItem(GRANITE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_CROWN_MOLDING), new BlockItem(POLISHED_GRANITE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_CROWN_MOLDING), new BlockItem(DIORITE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_CROWN_MOLDING), new BlockItem(POLISHED_DIORITE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_CROWN_MOLDING), new BlockItem(ANDESITE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_CROWN_MOLDING), new BlockItem(POLISHED_ANDESITE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_CROWN_MOLDING), new BlockItem(BLACKSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_CROWN_MOLDING), new BlockItem(POLISHED_BLACKSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_CROWN_MOLDING), new BlockItem(CHISELED_POLISHED_BLACKSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_CROWN_MOLDING), new BlockItem(GILDED_BLACKSTONE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING), new BlockItem(POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING), new BlockItem(CRACKED_POLISHED_BLACKSTONE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_CROWN_MOLDING), new BlockItem(DEEPSLATE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_CROWN_MOLDING), new BlockItem(DEEPSLATE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_CROWN_MOLDING), new BlockItem(DEEPSLATE_TILES_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_CROWN_MOLDING), new BlockItem(POLISHED_DEEPSLATE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_CROWN_MOLDING), new BlockItem(CHISELED_DEEPSLATE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_CROWN_MOLDING), new BlockItem(CRACKED_DEEPSLATE_BRICKS_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_CROWN_MOLDING), new BlockItem(CRACKED_DEEPSLATE_TILES_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_CROWN_MOLDING), new BlockItem(COBBLED_DEEPSLATE_CROWN_MOLDING, new FabricItemSettings().group(ITEM_GROUP)));
 
         // pillar base
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_PILLAR_BASE), new BlockItem(STONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_PILLAR_BASE), new BlockItem(SMOOTH_STONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_PILLAR_BASE), new BlockItem(COBBLESTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_PILLAR_BASE), new BlockItem(MOSSY_COBBLESTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_PILLAR_BASE), new BlockItem(BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_PILLAR_BASE), new BlockItem(STONE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_PILLAR_BASE), new BlockItem(MOSSY_STONE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_PILLAR_BASE), new BlockItem(CRACKED_STONE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_PILLAR_BASE), new BlockItem(CHISELED_STONE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_PILLAR_BASE), new BlockItem(OBSIDIAN_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_PILLAR_BASE), new BlockItem(SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_PILLAR_BASE), new BlockItem(SMOOTH_SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_PILLAR_BASE), new BlockItem(CHISELED_SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_PILLAR_BASE), new BlockItem(CUT_SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_PILLAR_BASE), new BlockItem(RED_SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_PILLAR_BASE), new BlockItem(SMOOTH_RED_SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_PILLAR_BASE), new BlockItem(CHISELED_RED_SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_PILLAR_BASE), new BlockItem(CUT_RED_SANDSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_PILLAR_BASE), new BlockItem(GRANITE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_PILLAR_BASE), new BlockItem(POLISHED_GRANITE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_PILLAR_BASE), new BlockItem(DIORITE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_PILLAR_BASE), new BlockItem(POLISHED_DIORITE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_PILLAR_BASE), new BlockItem(ANDESITE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_PILLAR_BASE), new BlockItem(POLISHED_ANDESITE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_PILLAR_BASE), new BlockItem(BLACKSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_PILLAR_BASE), new BlockItem(POLISHED_BLACKSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_PILLAR_BASE), new BlockItem(CHISELED_POLISHED_BLACKSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_PILLAR_BASE), new BlockItem(GILDED_BLACKSTONE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE), new BlockItem(POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE), new BlockItem(CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_PILLAR_BASE), new BlockItem(DEEPSLATE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_PILLAR_BASE), new BlockItem(DEEPSLATE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_PILLAR_BASE), new BlockItem(DEEPSLATE_TILES_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_PILLAR_BASE), new BlockItem(POLISHED_DEEPSLATE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_PILLAR_BASE), new BlockItem(CHISELED_DEEPSLATE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_PILLAR_BASE), new BlockItem(CRACKED_DEEPSLATE_BRICKS_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_PILLAR_BASE), new BlockItem(CRACKED_DEEPSLATE_TILES_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_PILLAR_BASE), new BlockItem(COBBLED_DEEPSLATE_PILLAR_BASE, new FabricItemSettings().group(ITEM_GROUP)));
 
         // pillar
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_PILLAR), new BlockItem(STONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_PILLAR), new BlockItem(SMOOTH_STONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_PILLAR), new BlockItem(COBBLESTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_PILLAR), new BlockItem(MOSSY_COBBLESTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_PILLAR), new BlockItem(BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_PILLAR), new BlockItem(STONE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_PILLAR), new BlockItem(MOSSY_STONE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_PILLAR), new BlockItem(CRACKED_STONE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_PILLAR), new BlockItem(CHISELED_STONE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_PILLAR), new BlockItem(OBSIDIAN_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_PILLAR), new BlockItem(SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_PILLAR), new BlockItem(SMOOTH_SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_PILLAR), new BlockItem(CHISELED_SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_PILLAR), new BlockItem(CUT_SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_PILLAR), new BlockItem(RED_SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_PILLAR), new BlockItem(SMOOTH_RED_SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_PILLAR), new BlockItem(CHISELED_RED_SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_PILLAR), new BlockItem(CUT_RED_SANDSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_PILLAR), new BlockItem(GRANITE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_PILLAR), new BlockItem(POLISHED_GRANITE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_PILLAR), new BlockItem(DIORITE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_PILLAR), new BlockItem(POLISHED_DIORITE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_PILLAR), new BlockItem(ANDESITE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_PILLAR), new BlockItem(POLISHED_ANDESITE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_PILLAR), new BlockItem(BLACKSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_PILLAR), new BlockItem(POLISHED_BLACKSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_PILLAR), new BlockItem(CHISELED_POLISHED_BLACKSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_PILLAR), new BlockItem(GILDED_BLACKSTONE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_PILLAR), new BlockItem(POLISHED_BLACKSTONE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR), new BlockItem(CRACKED_POLISHED_BLACKSTONE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_PILLAR), new BlockItem(DEEPSLATE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_PILLAR), new BlockItem(DEEPSLATE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_PILLAR), new BlockItem(DEEPSLATE_TILES_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_PILLAR), new BlockItem(POLISHED_DEEPSLATE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_PILLAR), new BlockItem(CHISELED_DEEPSLATE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_PILLAR), new BlockItem(CRACKED_DEEPSLATE_BRICKS_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_PILLAR), new BlockItem(CRACKED_DEEPSLATE_TILES_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_PILLAR), new BlockItem(COBBLED_DEEPSLATE_PILLAR, new FabricItemSettings().group(ITEM_GROUP)));
 
         // wall sconce
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_WALL_SCONCE), new BlockItem(STONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_STONE_WALL_SCONCE), new BlockItem(SMOOTH_STONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLESTONE_WALL_SCONCE), new BlockItem(COBBLESTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_COBBLESTONE_WALL_SCONCE), new BlockItem(MOSSY_COBBLESTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BRICKS_WALL_SCONCE), new BlockItem(BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.STONE_BRICKS_WALL_SCONCE), new BlockItem(STONE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.MOSSY_STONE_BRICKS_WALL_SCONCE), new BlockItem(MOSSY_STONE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_STONE_BRICKS_WALL_SCONCE), new BlockItem(CRACKED_STONE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_STONE_BRICKS_WALL_SCONCE), new BlockItem(CHISELED_STONE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.OBSIDIAN_WALL_SCONCE), new BlockItem(OBSIDIAN_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SANDSTONE_WALL_SCONCE), new BlockItem(SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_SANDSTONE_WALL_SCONCE), new BlockItem(SMOOTH_SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_SANDSTONE_WALL_SCONCE), new BlockItem(CHISELED_SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_SANDSTONE_WALL_SCONCE), new BlockItem(CUT_SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.RED_SANDSTONE_WALL_SCONCE), new BlockItem(RED_SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.SMOOTH_RED_SANDSTONE_WALL_SCONCE), new BlockItem(SMOOTH_RED_SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_RED_SANDSTONE_WALL_SCONCE), new BlockItem(CHISELED_RED_SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CUT_RED_SANDSTONE_WALL_SCONCE), new BlockItem(CUT_RED_SANDSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GRANITE_WALL_SCONCE), new BlockItem(GRANITE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_GRANITE_WALL_SCONCE), new BlockItem(POLISHED_GRANITE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DIORITE_WALL_SCONCE), new BlockItem(DIORITE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DIORITE_WALL_SCONCE), new BlockItem(POLISHED_DIORITE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.ANDESITE_WALL_SCONCE), new BlockItem(ANDESITE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_ANDESITE_WALL_SCONCE), new BlockItem(POLISHED_ANDESITE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.BLACKSTONE_WALL_SCONCE), new BlockItem(BLACKSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_WALL_SCONCE), new BlockItem(POLISHED_BLACKSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE), new BlockItem(CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GILDED_BLACKSTONE_WALL_SCONCE), new BlockItem(GILDED_BLACKSTONE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE), new BlockItem(POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE), new BlockItem(CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_WALL_SCONCE), new BlockItem(DEEPSLATE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_BRICKS_WALL_SCONCE), new BlockItem(DEEPSLATE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.DEEPSLATE_TILES_WALL_SCONCE), new BlockItem(DEEPSLATE_TILES_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.POLISHED_DEEPSLATE_WALL_SCONCE), new BlockItem(POLISHED_DEEPSLATE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CHISELED_DEEPSLATE_WALL_SCONCE), new BlockItem(CHISELED_DEEPSLATE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE), new BlockItem(CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.CRACKED_DEEPSLATE_TILES_WALL_SCONCE), new BlockItem(CRACKED_DEEPSLATE_TILES_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.COBBLED_DEEPSLATE_WALL_SCONCE), new BlockItem(COBBLED_DEEPSLATE_WALL_SCONCE, new FabricItemSettings().group(ITEM_GROUP)));
 
         // grate
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, ID.GRATE), new BlockItem(GRATE, new FabricItemSettings().group(ITEM_GROUP)));
+
     }
 }

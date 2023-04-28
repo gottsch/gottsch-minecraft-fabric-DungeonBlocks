@@ -3,18 +3,18 @@
   "id": "dungeonblocks",
   "version": "${version}",
 
-  "name": "DungeonBlocks",
+  "name": "Dungeon Blocks",
   "description": "",
   "authors": [
     "gottsch"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/dungeonblocks",
-    "sources": "https://www.curseforge.com/minecraft/mc-mods/dungeonblocks"
+    "sources": "https://github.com/gottsch/gottsch-minecraft-dungeonblocks"
   },
 
   "license": "LGPL-3.0-or-later",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/dungeonblocks/dungeonblocks_logo.png",
 
   "environment": "*",
   "entrypoints": {
