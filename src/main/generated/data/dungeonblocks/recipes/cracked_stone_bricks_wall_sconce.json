@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:torch"
+    },
+    "S": {
+      "item": "minecraft:cracked_stone_bricks"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    " i ",
+    " S "
+  ],
+  "result": {
+    "count": 3,
+    "item": "dungeonblocks:cracked_stone_bricks_wall_sconce"
+  }
+}

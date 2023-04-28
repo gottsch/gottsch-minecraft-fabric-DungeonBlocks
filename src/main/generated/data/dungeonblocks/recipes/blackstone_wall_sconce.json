@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:torch"
+    },
+    "S": {
+      "item": "minecraft:blackstone"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    " i ",
+    " S "
+  ],
+  "result": {
+    "count": 3,
+    "item": "dungeonblocks:blackstone_wall_sconce"
+  }
+}
