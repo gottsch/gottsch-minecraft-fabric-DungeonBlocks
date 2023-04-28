@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "dungeonblocks:block/polished_diorite_wall_sconce" },
+        "facing=down": { "model": "dungeonblocks:block/polished_diorite_wall_sconce" },
+        "facing=north": { "model": "dungeonblocks:block/polished_diorite_wall_sconce" },
+        "facing=east": { "model": "dungeonblocks:block/polished_diorite_wall_sconce", "y": 90 },
+        "facing=south": { "model": "dungeonblocks:block/polished_diorite_wall_sconce", "y": 180 },
+        "facing=west": { "model": "dungeonblocks:block/polished_diorite_wall_sconce", "y": 270 }
+    }
+}

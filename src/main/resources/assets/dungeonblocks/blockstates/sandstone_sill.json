@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "dungeonblocks:block/sandstone_sill" },
+        "facing=down": { "model": "dungeonblocks:block/sandstone_sill" },
+        "facing=north": { "model": "dungeonblocks:block/sandstone_sill" },
+        "facing=east": { "model": "dungeonblocks:block/sandstone_sill", "y": 90 },
+        "facing=south": { "model": "dungeonblocks:block/sandstone_sill", "y": 180 },
+        "facing=west": { "model": "dungeonblocks:block/sandstone_sill", "y": 270 }
+    }
+}

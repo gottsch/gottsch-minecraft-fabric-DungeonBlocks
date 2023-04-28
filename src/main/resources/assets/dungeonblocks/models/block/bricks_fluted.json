@@ -1,0 +1,6 @@
+{
+    "parent": "dungeonblocks:block/fluted_base",
+    "textures": {
+        "0": "block/bricks"
+    }
+}

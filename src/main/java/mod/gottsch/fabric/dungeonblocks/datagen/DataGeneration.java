@@ -1,3 +1,22 @@
+/*
+ * This file is part of  DungeonBlocks.
+ * Copyright (c) 2023 Mark Gottschling (gottsch)
+ *
+ * All rights reserved.
+ *
+ * DungeonBlocks is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * DungeonBlocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with DungeonBlocks.  If not, see <http://www.gnu.org/licenses/lgpl>.
+ */
 package mod.gottsch.fabric.dungeonblocks.datagen;
 
 import mod.gottsch.fabric.dungeonblocks.core.DungeonBlocks;
@@ -32,7 +51,6 @@ public class DataGeneration implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 //        fabricDataGenerator.addProvider(MyTagGenerator::new);
 //        fabricDataGenerator.addProvider(MyModelGenerator::new);
-        // TEMP
         fabricDataGenerator.addProvider(MyModEnglishLangProvider::new);
         fabricDataGenerator.addProvider(MyRecipeGenerator::new);
         fabricDataGenerator.addProvider(MyBlockLootTables::new);
@@ -41,52 +59,52 @@ public class DataGeneration implements DataGeneratorEntrypoint {
     /**
      *
      */
-    private static class MyTagGenerator extends FabricTagProvider<Item> {
-        // We will create an item tag called "smelly_items".
-        private static final TagKey<Item> SMELLY_ITEMS = TagKey.of(Registry.ITEM_KEY, new Identifier(DungeonBlocks.MOD_ID, "smelly_items"));
-
-
-        public MyTagGenerator(FabricDataGenerator dataGenerator) {
-            super(dataGenerator, Registry.ITEM);  // for versions 1.19.2 and below, use Registry.ITEM
-        }
-
-        @Override
-        protected void generateTags() {
-            // This creates a tag builder, where we add slime balls, rotten flesh and everything in the minecraft:dirt item tag.
-            getOrCreateTagBuilder(SMELLY_ITEMS)
-                    .add(Items.SLIME_BALL)
-                    .add(Items.ROTTEN_FLESH)
-                    .addOptionalTag(ItemTags.DIRT);
-            // This will automatically generate "assets/tutorial/tags/items/smelly_items.json" in the "generated" folder.
-        }
-    }
+//    private static class MyTagGenerator extends FabricTagProvider<Item> {
+//        // We will create an item tag called "smelly_items".
+//        private static final TagKey<Item> SMELLY_ITEMS = TagKey.of(Registry.ITEM_KEY, new Identifier(DungeonBlocks.MOD_ID, "smelly_items"));
+//
+//
+//        public MyTagGenerator(FabricDataGenerator dataGenerator) {
+//            super(dataGenerator, Registry.ITEM);  // for versions 1.19.2 and below, use Registry.ITEM
+//        }
+//
+//        @Override
+//        protected void generateTags() {
+//            // This creates a tag builder, where we add slime balls, rotten flesh and everything in the minecraft:dirt item tag.
+//            getOrCreateTagBuilder(SMELLY_ITEMS)
+//                    .add(Items.SLIME_BALL)
+//                    .add(Items.ROTTEN_FLESH)
+//                    .addOptionalTag(ItemTags.DIRT);
+//            // This will automatically generate "assets/tutorial/tags/items/smelly_items.json" in the "generated" folder.
+//        }
+//    }
 
     /**
      *
      */
-    private static class MyModelGenerator extends FabricModelProvider {
-        private MyModelGenerator(FabricDataGenerator generator) {
-            super(generator);
-        }
-
-        @Override
-        public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-//            blockStateModelGenerator.registerSimpleCubeAll(Registration.STONE_FACADE);
-            // why isn't this working?
-            blockStateModelGenerator.blockStateCollector.accept(
-                    MultipartBlockStateSupplier.create(Registration.STONE_FACADE)
-                    .with(When.create()
-                                    .set(Properties.FACING, Direction.NORTH)
-                                    .set(IFacadeShapeBlock.SHAPE, FacadeShape.STRAIGHT)
-                                    .set(Properties.WATERLOGGED, false),
-                            BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R90)));
-        }
-
-        @Override
-        public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-//            itemModelGenerator.register(Registration.STONE_FACADE_ITEM, Models.GENERATED);
-        }
-    }
+//    private static class MyModelGenerator extends FabricModelProvider {
+//        private MyModelGenerator(FabricDataGenerator generator) {
+//            super(generator);
+//        }
+//
+//        @Override
+//        public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+////            blockStateModelGenerator.registerSimpleCubeAll(Registration.STONE_FACADE);
+//            // why isn't this working?
+//            blockStateModelGenerator.blockStateCollector.accept(
+//                    MultipartBlockStateSupplier.create(Registration.STONE_FACADE)
+//                    .with(When.create()
+//                                    .set(Properties.FACING, Direction.NORTH)
+//                                    .set(IFacadeShapeBlock.SHAPE, FacadeShape.STRAIGHT)
+//                                    .set(Properties.WATERLOGGED, false),
+//                            BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R90)));
+//        }
+//
+//        @Override
+//        public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+////            itemModelGenerator.register(Registration.STONE_FACADE_ITEM, Models.GENERATED);
+//        }
+//    }
 
     /**
      *
@@ -99,6 +117,8 @@ public class DataGeneration implements DataGeneratorEntrypoint {
 
         @Override
         public void generateTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add(Registration.ITEM_GROUP , "DungeonBlocks");
+
             translationBuilder.add(Registration.STONE_FACADE , "Stone Facade");
             translationBuilder.add(Registration.SMOOTH_STONE_FACADE, "Smooth Stone Facade");
             translationBuilder.add(Registration.COBBLESTONE_FACADE, "Cobblestone Facade");
@@ -163,6 +183,7 @@ public class DataGeneration implements DataGeneratorEntrypoint {
 
         @Override
         protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
+            // facade
             RecipeProvider.offerStonecuttingRecipe(exporter, Registration.STONE_FACADE, Blocks.STONE, 2);
             RecipeProvider.offerStonecuttingRecipe(exporter, Registration.SMOOTH_STONE_FACADE, Blocks.SMOOTH_STONE,2);
             RecipeProvider.offerStonecuttingRecipe(exporter, Registration.COBBLESTONE_FACADE, Blocks.COBBLESTONE, 2);
@@ -206,6 +227,50 @@ public class DataGeneration implements DataGeneratorEntrypoint {
             RecipeProvider.offerStonecuttingRecipe(exporter, Registration.DEEPSLATE_TILES_FACADE, Blocks.DEEPSLATE_TILES,2);
             RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CRACKED_DEEPSLATE_TILES_FACADE, Blocks.CRACKED_DEEPSLATE_TILES,2);
 
+            // quarter facade
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.STONE_QUARTER_FACADE, Blocks.STONE, 2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.SMOOTH_STONE_QUARTER_FACADE, Blocks.SMOOTH_STONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.COBBLESTONE_QUARTER_FACADE, Blocks.COBBLESTONE, 2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.MOSSY_COBBLESTONE_QUARTER_FACADE, Blocks.MOSSY_COBBLESTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.BRICKS_QUARTER_FACADE, Blocks.BRICKS, 2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.STONE_BRICKS_QUARTER_FACADE, Blocks.STONE_BRICKS,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.MOSSY_STONE_BRICKS_QUARTER_FACADE, Blocks.MOSSY_STONE_BRICKS,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CRACKED_STONE_BRICKS_QUARTER_FACADE, Blocks.CRACKED_STONE_BRICKS,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CHISELED_STONE_BRICKS_QUARTER_FACADE, Blocks.CHISELED_STONE_BRICKS,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.OBSIDIAN_QUARTER_FACADE, Blocks.OBSIDIAN,2);
+
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.SANDSTONE_QUARTER_FACADE, Blocks.SANDSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.SMOOTH_SANDSTONE_QUARTER_FACADE, Blocks.SMOOTH_SANDSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CHISELED_SANDSTONE_QUARTER_FACADE, Blocks.CHISELED_SANDSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CUT_SANDSTONE_QUARTER_FACADE, Blocks.CUT_SANDSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.RED_SANDSTONE_QUARTER_FACADE, Blocks.RED_SANDSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.SMOOTH_RED_SANDSTONE_QUARTER_FACADE, Blocks.SMOOTH_RED_SANDSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CHISELED_RED_SANDSTONE_QUARTER_FACADE, Blocks.CHISELED_RED_SANDSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CUT_RED_SANDSTONE_QUARTER_FACADE, Blocks.CUT_RED_SANDSTONE,2);
+
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.GRANITE_QUARTER_FACADE, Blocks.GRANITE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.POLISHED_GRANITE_QUARTER_FACADE, Blocks.POLISHED_GRANITE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.DIORITE_QUARTER_FACADE, Blocks.DIORITE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.POLISHED_DIORITE_QUARTER_FACADE, Blocks.POLISHED_DIORITE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.ANDESITE_QUARTER_FACADE, Blocks.ANDESITE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.POLISHED_ANDESITE_QUARTER_FACADE, Blocks.POLISHED_ANDESITE,2);
+
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.BLACKSTONE_QUARTER_FACADE, Blocks.BLACKSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.POLISHED_BLACKSTONE_QUARTER_FACADE, Blocks.POLISHED_BLACKSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CHISELED_POLISHED_BLACKSTONE_QUARTER_FACADE, Blocks.CHISELED_POLISHED_BLACKSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.GILDED_BLACKSTONE_QUARTER_FACADE, Blocks.GILDED_BLACKSTONE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.POLISHED_BLACKSTONE_BRICKS_QUARTER_FACADE, Blocks.POLISHED_BLACKSTONE_BRICKS,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CRACKED_POLISHED_BLACKSTONE_BRICKS_QUARTER_FACADE, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS,2);
+
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.DEEPSLATE_QUARTER_FACADE, Blocks.DEEPSLATE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.DEEPSLATE_BRICKS_QUARTER_FACADE, Blocks.DEEPSLATE_BRICKS,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CRACKED_DEEPSLATE_BRICKS_QUARTER_FACADE, Blocks.CRACKED_DEEPSLATE_BRICKS,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.COBBLED_DEEPSLATE_QUARTER_FACADE, Blocks.COBBLED_DEEPSLATE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.POLISHED_DEEPSLATE_QUARTER_FACADE, Blocks.POLISHED_DEEPSLATE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CHISELED_DEEPSLATE_QUARTER_FACADE, Blocks.CHISELED_DEEPSLATE,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.DEEPSLATE_TILES_QUARTER_FACADE, Blocks.DEEPSLATE_TILES,2);
+            RecipeProvider.offerStonecuttingRecipe(exporter, Registration.CRACKED_DEEPSLATE_TILES_QUARTER_FACADE, Blocks.CRACKED_DEEPSLATE_TILES,2);
+
         }
     }
 
@@ -219,6 +284,7 @@ public class DataGeneration implements DataGeneratorEntrypoint {
 
         @Override
         protected void generateBlockLootTables() {
+            // facade
             addDrop(Registration.STONE_FACADE, drops(Registration.STONE_FACADE));
             addDrop(Registration.SMOOTH_STONE_FACADE, drops(Registration.SMOOTH_STONE_FACADE));
             addDrop(Registration.COBBLESTONE_FACADE, drops(Registration.COBBLESTONE_FACADE));
@@ -254,6 +320,43 @@ public class DataGeneration implements DataGeneratorEntrypoint {
             addDrop(Registration.CHISELED_DEEPSLATE_FACADE, drops(Registration.CHISELED_DEEPSLATE_FACADE));
             addDrop(Registration.DEEPSLATE_TILES_FACADE, drops(Registration.DEEPSLATE_TILES_FACADE));
             addDrop(Registration.CRACKED_DEEPSLATE_TILES_FACADE, drops(Registration.CRACKED_DEEPSLATE_TILES_FACADE));
+
+            // quarter facade
+            addDrop(Registration.STONE_QUARTER_FACADE, drops(Registration.STONE_QUARTER_FACADE));
+            addDrop(Registration.SMOOTH_STONE_QUARTER_FACADE, drops(Registration.SMOOTH_STONE_QUARTER_FACADE));
+            addDrop(Registration.COBBLESTONE_QUARTER_FACADE, drops(Registration.COBBLESTONE_QUARTER_FACADE));
+            addDrop(Registration.MOSSY_COBBLESTONE_QUARTER_FACADE, drops(Registration.MOSSY_COBBLESTONE_QUARTER_FACADE));
+            addDrop(Registration.BRICKS_QUARTER_FACADE, drops(Registration.BRICKS_QUARTER_FACADE));
+            addDrop(Registration.STONE_BRICKS_QUARTER_FACADE, drops(Registration.STONE_BRICKS_QUARTER_FACADE));
+            addDrop(Registration.MOSSY_STONE_BRICKS_QUARTER_FACADE, drops(Registration.MOSSY_STONE_BRICKS_QUARTER_FACADE));
+            addDrop(Registration.CRACKED_STONE_BRICKS_QUARTER_FACADE, drops(Registration.CRACKED_STONE_BRICKS_QUARTER_FACADE));
+            addDrop(Registration.CHISELED_STONE_BRICKS_QUARTER_FACADE, drops(Registration.CHISELED_STONE_BRICKS_QUARTER_FACADE));
+            addDrop(Registration.OBSIDIAN_QUARTER_FACADE, drops(Registration.OBSIDIAN_QUARTER_FACADE));
+
+            addDrop(Registration.SANDSTONE_QUARTER_FACADE, drops(Registration.SANDSTONE_QUARTER_FACADE));
+            addDrop(Registration.SMOOTH_SANDSTONE_QUARTER_FACADE, drops(Registration.SMOOTH_SANDSTONE_QUARTER_FACADE));
+            addDrop(Registration.CHISELED_SANDSTONE_QUARTER_FACADE, drops(Registration.CHISELED_SANDSTONE_QUARTER_FACADE));
+            addDrop(Registration.CUT_SANDSTONE_QUARTER_FACADE, drops(Registration.CUT_SANDSTONE_QUARTER_FACADE));
+            addDrop(Registration.RED_SANDSTONE_QUARTER_FACADE, drops(Registration.RED_SANDSTONE_QUARTER_FACADE));
+            addDrop(Registration.SMOOTH_RED_SANDSTONE_QUARTER_FACADE, drops(Registration.SMOOTH_RED_SANDSTONE_QUARTER_FACADE));
+            addDrop(Registration.CHISELED_RED_SANDSTONE_QUARTER_FACADE, drops(Registration.CHISELED_RED_SANDSTONE_QUARTER_FACADE));
+            addDrop(Registration.CUT_RED_SANDSTONE_QUARTER_FACADE, drops(Registration.CUT_RED_SANDSTONE_QUARTER_FACADE));
+
+            addDrop(Registration.BLACKSTONE_QUARTER_FACADE, drops(Registration.BLACKSTONE_QUARTER_FACADE));
+            addDrop(Registration.POLISHED_BLACKSTONE_QUARTER_FACADE, drops(Registration.POLISHED_BLACKSTONE_QUARTER_FACADE));
+            addDrop(Registration.CHISELED_POLISHED_BLACKSTONE_QUARTER_FACADE, drops(Registration.CHISELED_POLISHED_BLACKSTONE_QUARTER_FACADE));
+            addDrop(Registration.GILDED_BLACKSTONE_QUARTER_FACADE, drops(Registration.GILDED_BLACKSTONE_QUARTER_FACADE));
+            addDrop(Registration.POLISHED_BLACKSTONE_BRICKS_QUARTER_FACADE, drops(Registration.POLISHED_BLACKSTONE_BRICKS_QUARTER_FACADE));
+            addDrop(Registration.CRACKED_POLISHED_BLACKSTONE_BRICKS_QUARTER_FACADE, drops(Registration.CRACKED_POLISHED_BLACKSTONE_BRICKS_QUARTER_FACADE));
+
+            addDrop(Registration.DEEPSLATE_QUARTER_FACADE, drops(Registration.DEEPSLATE_QUARTER_FACADE));
+            addDrop(Registration.DEEPSLATE_BRICKS_QUARTER_FACADE, drops(Registration.DEEPSLATE_BRICKS_QUARTER_FACADE));
+            addDrop(Registration.CRACKED_DEEPSLATE_BRICKS_QUARTER_FACADE, drops(Registration.CRACKED_DEEPSLATE_BRICKS_QUARTER_FACADE));
+            addDrop(Registration.COBBLED_DEEPSLATE_QUARTER_FACADE, drops(Registration.COBBLED_DEEPSLATE_QUARTER_FACADE));
+            addDrop(Registration.POLISHED_DEEPSLATE_QUARTER_FACADE, drops(Registration.POLISHED_DEEPSLATE_QUARTER_FACADE));
+            addDrop(Registration.CHISELED_DEEPSLATE_QUARTER_FACADE, drops(Registration.CHISELED_DEEPSLATE_QUARTER_FACADE));
+            addDrop(Registration.DEEPSLATE_TILES_QUARTER_FACADE, drops(Registration.DEEPSLATE_TILES_QUARTER_FACADE));
+            addDrop(Registration.CRACKED_DEEPSLATE_TILES_QUARTER_FACADE, drops(Registration.CRACKED_DEEPSLATE_TILES_QUARTER_FACADE));
 
         }
     }

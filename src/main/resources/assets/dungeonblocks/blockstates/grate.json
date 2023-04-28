@@ -1,0 +1,30 @@
+{
+    "variants": {
+		"base=up": {
+            "model": "dungeonblocks:block/grate"
+        },
+        "base=down": {
+            "model": "dungeonblocks:block/grate",
+            "x": 180
+        },
+          "base=north": {
+            "model": "dungeonblocks:block/grate",
+            "x": 90
+        },
+        "base=south": {
+            "model": "dungeonblocks:block/grate",
+            "x": 270
+        },
+        "base=west": {
+            "model": "dungeonblocks:block/grate",
+            "x": 90,
+            "y": 270
+        },
+        "base=east": {
+            "model": "dungeonblocks:block/grate",
+            "x": 90,
+            "y": 90
+        }      
+
+    }
+}

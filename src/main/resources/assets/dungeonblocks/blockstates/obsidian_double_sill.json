@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "dungeonblocks:block/obsidian_double_sill" },
+        "facing=down": { "model": "dungeonblocks:block/obsidian_double_sill" },
+        "facing=north": { "model": "dungeonblocks:block/obsidian_double_sill" },
+        "facing=east": { "model": "dungeonblocks:block/obsidian_double_sill", "y": 90 },
+        "facing=south": { "model": "dungeonblocks:block/obsidian_double_sill", "y": 180 },
+        "facing=west": { "model": "dungeonblocks:block/obsidian_double_sill", "y": 270 }
+    }
+}

@@ -91,94 +91,94 @@ public class Registration {
         /*
          * register blocks
          */
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "stone_facade_block"), STONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "smooth_stone_facade_block"), SMOOTH_STONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cobblestone_facade_block"), COBBLESTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "mossy_cobblestone_facade_block"), MOSSY_COBBLESTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "bricks_facade_block"), BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "stone_bricks_facade_block"), STONE_BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "mossy_stone_bricks_facade_block"), MOSSY_STONE_BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_stone_bricks_facade_block"), CRACKED_STONE_BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_stone_bricks_facade_block"), CHISELED_STONE_BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "obsidian_facade_block"), OBSIDIAN_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "stone_facade"), STONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "smooth_stone_facade"), SMOOTH_STONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cobblestone_facade"), COBBLESTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "mossy_cobblestone_facade"), MOSSY_COBBLESTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "bricks_facade"), BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "stone_bricks_facade"), STONE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "mossy_stone_bricks_facade"), MOSSY_STONE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_stone_bricks_facade"), CRACKED_STONE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_stone_bricks_facade"), CHISELED_STONE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "obsidian_facade"), OBSIDIAN_FACADE);
 
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "sandstone_facade_block"), SANDSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "smooth_sandstone_facade_block"), SMOOTH_SANDSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_sandstone_facade_block"), CHISELED_SANDSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cut_sandstone_facade_block"), CUT_SANDSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "red_sandstone_facade_block"), RED_SANDSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "smooth_red_sandstone_facade_block"), SMOOTH_RED_SANDSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_red_sandstone_facade_block"), CHISELED_RED_SANDSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cut_red_sandstone_facade_block"), CUT_RED_SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "sandstone_facade"), SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "smooth_sandstone_facade"), SMOOTH_SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_sandstone_facade"), CHISELED_SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cut_sandstone_facade"), CUT_SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "red_sandstone_facade"), RED_SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "smooth_red_sandstone_facade"), SMOOTH_RED_SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_red_sandstone_facade"), CHISELED_RED_SANDSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cut_red_sandstone_facade"), CUT_RED_SANDSTONE_FACADE);
 
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "granite_facade_block"), GRANITE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_granite_facade_block"), POLISHED_GRANITE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "diorite_facade_block"), DIORITE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_diorite_facade_block"), POLISHED_DIORITE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "andesite_facade_block"), ANDESITE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_andesite_facade_block"), POLISHED_ANDESITE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "granite_facade"), GRANITE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_granite_facade"), POLISHED_GRANITE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "diorite_facade"), DIORITE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_diorite_facade"), POLISHED_DIORITE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "andesite_facade"), ANDESITE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_andesite_facade"), POLISHED_ANDESITE_FACADE);
 
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "blackstone_facade_block"), BLACKSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_facade_block"), POLISHED_BLACKSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_polished_blackstone_facade_block"), CHISELED_POLISHED_BLACKSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "gilded_blackstone_facade_block"), GILDED_BLACKSTONE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_bricks_facade_block"), POLISHED_BLACKSTONE_BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_polished_blackstone_facade_block"), CRACKED_POLISHED_BLACKSTONE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "blackstone_facade"), BLACKSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_facade"), POLISHED_BLACKSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_polished_blackstone_facade"), CHISELED_POLISHED_BLACKSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "gilded_blackstone_facade"), GILDED_BLACKSTONE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_bricks_facade"), POLISHED_BLACKSTONE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_polished_blackstone_facade"), CRACKED_POLISHED_BLACKSTONE_BRICKS_FACADE);
 
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "deepslate_facade_block"), DEEPSLATE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "deepslate_bricks_facade_block"), DEEPSLATE_BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "deepslate_tiles_facade_block"), DEEPSLATE_TILES_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_deepslate_facade_block"), POLISHED_DEEPSLATE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_deepslate_facade_block"), CHISELED_DEEPSLATE_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_bricks_facade_block"), CRACKED_DEEPSLATE_BRICKS_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_tiles_facade_block"), CRACKED_DEEPSLATE_TILES_FACADE);
-        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cobbled_deepslate_facade_block"), COBBLED_DEEPSLATE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "deepslate_facade"), DEEPSLATE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "deepslate_bricks_facade"), DEEPSLATE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "deepslate_tiles_facade"), DEEPSLATE_TILES_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "polished_deepslate_facade"), POLISHED_DEEPSLATE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "chiseled_deepslate_facade"), CHISELED_DEEPSLATE_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_bricks_facade"), CRACKED_DEEPSLATE_BRICKS_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_tiles_facade"), CRACKED_DEEPSLATE_TILES_FACADE);
+        Registry.register(Registry.BLOCK, new Identifier(DungeonBlocks.MOD_ID, "cobbled_deepslate_facade"), COBBLED_DEEPSLATE_FACADE);
 
         /*
          * register items
          */
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "stone_facade_block"), new BlockItem(STONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "smooth_stone_facade_block"), new BlockItem(SMOOTH_STONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cobblestone_facade_block"), new BlockItem(COBBLESTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "mossy_cobblestone_facade_block"), new BlockItem(MOSSY_COBBLESTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "bricks_facade_block"), new BlockItem(BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "stone_bricks_facade_block"), new BlockItem(STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "mossy_stone_bricks_facade_block"), new BlockItem(MOSSY_STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_stone_bricks_facade_block"), new BlockItem(CRACKED_STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_stone_bricks_facade_block"), new BlockItem(CHISELED_STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "obsidian_facade_block"), new BlockItem(OBSIDIAN_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "stone_facade"), new BlockItem(STONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "smooth_stone_facade"), new BlockItem(SMOOTH_STONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cobblestone_facade"), new BlockItem(COBBLESTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "mossy_cobblestone_facade"), new BlockItem(MOSSY_COBBLESTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "bricks_facade"), new BlockItem(BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "stone_bricks_facade"), new BlockItem(STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "mossy_stone_bricks_facade"), new BlockItem(MOSSY_STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_stone_bricks_facade"), new BlockItem(CRACKED_STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_stone_bricks_facade"), new BlockItem(CHISELED_STONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "obsidian_facade"), new BlockItem(OBSIDIAN_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
 
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "sandstone_facade_block"), new BlockItem(SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "smooth_sandstone_facade_block"), new BlockItem(SMOOTH_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_sandstone_facade_block"), new BlockItem(CHISELED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cut_sandstone_facade_block"), new BlockItem(CUT_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "red_sandstone_facade_block"), new BlockItem(RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "smooth_red_sandstone_facade_block"), new BlockItem(SMOOTH_RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_red_sandstone_facade_block"), new BlockItem(CHISELED_RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cut_red_sandstone_facade_block"), new BlockItem(CUT_RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "sandstone_facade"), new BlockItem(SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "smooth_sandstone_facade"), new BlockItem(SMOOTH_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_sandstone_facade"), new BlockItem(CHISELED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cut_sandstone_facade"), new BlockItem(CUT_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "red_sandstone_facade"), new BlockItem(RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "smooth_red_sandstone_facade"), new BlockItem(SMOOTH_RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_red_sandstone_facade"), new BlockItem(CHISELED_RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cut_red_sandstone_facade"), new BlockItem(CUT_RED_SANDSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
 
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "granite_facade_block"), new BlockItem(GRANITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_granite_facade_block"), new BlockItem(POLISHED_GRANITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "diorite_facade_block"), new BlockItem(DIORITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_diorite_facade_block"), new BlockItem(POLISHED_DIORITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "andesite_facade_block"), new BlockItem(ANDESITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_andesite_facade_block"), new BlockItem(POLISHED_ANDESITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "granite_facade"), new BlockItem(GRANITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_granite_facade"), new BlockItem(POLISHED_GRANITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "diorite_facade"), new BlockItem(DIORITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_diorite_facade"), new BlockItem(POLISHED_DIORITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "andesite_facade"), new BlockItem(ANDESITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_andesite_facade"), new BlockItem(POLISHED_ANDESITE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
 
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "blackstone_facade_block"), new BlockItem(BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_facade_block"), new BlockItem(POLISHED_BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_polished_blackstone_facade_block"), new BlockItem(CHISELED_POLISHED_BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "gilded_blackstone_facade_block"), new BlockItem(GILDED_BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_bricks_facade_block"), new BlockItem(POLISHED_BLACKSTONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_polished_blackstone_bricks_facade_block"), new BlockItem(CRACKED_POLISHED_BLACKSTONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "blackstone_facade"), new BlockItem(BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_facade"), new BlockItem(POLISHED_BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_polished_blackstone_facade"), new BlockItem(CHISELED_POLISHED_BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "gilded_blackstone_facade"), new BlockItem(GILDED_BLACKSTONE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_blackstone_bricks_facade"), new BlockItem(POLISHED_BLACKSTONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_polished_blackstone_bricks_facade"), new BlockItem(CRACKED_POLISHED_BLACKSTONE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
 
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "deepslate_facade_block"), new BlockItem(DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "deepslate_bricks_facade_block"), new BlockItem(DEEPSLATE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "deepslate_tiles_facade_block"), new BlockItem(DEEPSLATE_TILES_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_deepslate_facade_block"), new BlockItem(POLISHED_DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_deepslate_facade_block"), new BlockItem(CHISELED_DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_bricks_facade_block"), new BlockItem(CRACKED_DEEPSLATE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_tiles_facade_block"), new BlockItem(CRACKED_DEEPSLATE_TILES_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
-        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cobbled_deepslate_facade_block"), new BlockItem(COBBLED_DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "deepslate_facade"), new BlockItem(DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "deepslate_bricks_facade"), new BlockItem(DEEPSLATE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "deepslate_tiles_facade"), new BlockItem(DEEPSLATE_TILES_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "polished_deepslate_facade"), new BlockItem(POLISHED_DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "chiseled_deepslate_facade"), new BlockItem(CHISELED_DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_bricks_facade"), new BlockItem(CRACKED_DEEPSLATE_BRICKS_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cracked_deepslate_tiles_facade"), new BlockItem(CRACKED_DEEPSLATE_TILES_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier(DungeonBlocks.MOD_ID, "cobbled_deepslate_facade"), new BlockItem(COBBLED_DEEPSLATE_FACADE, new FabricItemSettings().group(ItemGroup.MISC)));
 
 //        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
 //            content.addAfter(Items.OAK_DOOR, CUSTOM_ITEM);

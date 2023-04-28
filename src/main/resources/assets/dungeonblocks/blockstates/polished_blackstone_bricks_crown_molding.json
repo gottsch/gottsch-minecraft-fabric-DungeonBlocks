@@ -1,0 +1,38 @@
+{
+    "variants": {
+        "facing=up,shape=straight": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding" },
+        "facing=down,shape=straight": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding" },
+        "facing=north,shape=straight": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding" },
+        "facing=east,shape=straight": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding", "y": 90 },
+        "facing=south,shape=straight": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding", "y": 180 },
+        "facing=west,shape=straight": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding", "y": 270 },
+        
+        "facing=up,shape=inner_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner" },
+        "facing=down,shape=inner_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner" },
+        "facing=north,shape=inner_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner", "y": 90 },
+        "facing=east,shape=inner_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner"  },
+        "facing=south,shape=inner_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner", "y": 180 },
+        "facing=west,shape=inner_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner" },
+        
+        "facing=up,shape=inner_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner" },
+        "facing=down,shape=inner_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner" },
+        "facing=north,shape=inner_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner"},
+        "facing=east,shape=inner_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner" },
+        "facing=south,shape=inner_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner", "y": 270 },
+        "facing=west,shape=inner_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_inner"},
+        
+        "facing=up,shape=outer_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        "facing=down,shape=outer_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        "facing=north,shape=outer_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        "facing=east,shape=outer_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        "facing=south,shape=outer_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer", "y": 270},
+        "facing=west,shape=outer_left": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        
+        "facing=up,shape=outer_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        "facing=down,shape=outer_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        "facing=north,shape=outer_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer", "y": 90 },
+        "facing=east,shape=outer_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer" },
+        "facing=south,shape=outer_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer", "y": 180 },
+        "facing=west,shape=outer_right": { "model": "dungeonblocks:block/polished_blackstone_bricks_crown_molding_outer"}
+    }
+}

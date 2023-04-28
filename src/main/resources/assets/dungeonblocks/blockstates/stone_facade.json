@@ -1,0 +1,73 @@
+{
+    "variants": {
+        "facing=up,shape=straight,waterlogged=false": { "model": "dungeonblocks:block/stone_facade" },
+        "facing=down,shape=straight,waterlogged=false": { "model": "dungeonblocks:block/stone_facade" },
+        "facing=north,shape=straight,waterlogged=false": { "model": "dungeonblocks:block/stone_facade" },
+        "facing=east,shape=straight,waterlogged=false": { "model": "dungeonblocks:block/stone_facade", "y": 90 },
+        "facing=south,shape=straight,waterlogged=false": { "model": "dungeonblocks:block/stone_facade", "y": 180 },
+        "facing=west,shape=straight,waterlogged=false": { "model": "dungeonblocks:block/stone_facade", "y": 270 },
+
+        "facing=up,shape=inner_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=down,shape=inner_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=north,shape=inner_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner", "y": 90 },
+        "facing=east,shape=inner_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner"  },
+        "facing=south,shape=inner_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner", "y": 180 },
+        "facing=west,shape=inner_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner" },
+        
+        "facing=up,shape=inner_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=down,shape=inner_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=north,shape=inner_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner"},
+        "facing=east,shape=inner_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=south,shape=inner_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner", "y": 270 },
+        "facing=west,shape=inner_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_inner"},
+        
+        "facing=up,shape=outer_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=down,shape=outer_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=north,shape=outer_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=east,shape=outer_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=south,shape=outer_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer", "y": 270},
+        "facing=west,shape=outer_left,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        
+        "facing=up,shape=outer_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=down,shape=outer_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=north,shape=outer_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer", "y": 90 },
+        "facing=east,shape=outer_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=south,shape=outer_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer", "y": 180 },
+        "facing=west,shape=outer_right,waterlogged=false": { "model": "dungeonblocks:block/stone_facade_outer"},
+
+        "facing=up,shape=straight,waterlogged=true": { "model": "dungeonblocks:block/stone_facade" },
+        "facing=down,shape=straight,waterlogged=true": { "model": "dungeonblocks:block/stone_facade" },
+        "facing=north,shape=straight,waterlogged=true": { "model": "dungeonblocks:block/stone_facade" },
+        "facing=east,shape=straight,waterlogged=true": { "model": "dungeonblocks:block/stone_facade", "y": 90 },
+        "facing=south,shape=straight,waterlogged=true": { "model": "dungeonblocks:block/stone_facade", "y": 180 },
+        "facing=west,shape=straight,waterlogged=true": { "model": "dungeonblocks:block/stone_facade", "y": 270 },
+
+        "facing=up,shape=inner_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=down,shape=inner_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=north,shape=inner_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner", "y": 90 },
+        "facing=east,shape=inner_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner"  },
+        "facing=south,shape=inner_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner", "y": 180 },
+        "facing=west,shape=inner_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner" },
+
+        "facing=up,shape=inner_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=down,shape=inner_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=north,shape=inner_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner"},
+        "facing=east,shape=inner_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner" },
+        "facing=south,shape=inner_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner", "y": 270 },
+        "facing=west,shape=inner_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_inner"},
+
+        "facing=up,shape=outer_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=down,shape=outer_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=north,shape=outer_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=east,shape=outer_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=south,shape=outer_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer", "y": 270},
+        "facing=west,shape=outer_left,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+
+        "facing=up,shape=outer_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=down,shape=outer_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=north,shape=outer_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer", "y": 90 },
+        "facing=east,shape=outer_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer" },
+        "facing=south,shape=outer_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer", "y": 180 },
+        "facing=west,shape=outer_right,waterlogged=true": { "model": "dungeonblocks:block/stone_facade_outer"}
+    }
+}
