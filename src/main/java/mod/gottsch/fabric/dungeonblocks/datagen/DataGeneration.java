@@ -22,17 +22,20 @@ package mod.gottsch.fabric.dungeonblocks.datagen;
 import mod.gottsch.fabric.dungeonblocks.core.setup.Registration;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.RecipeProvider;
+
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.SingleItemRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
 import java.nio.file.Path;
@@ -45,68 +48,22 @@ public class DataGeneration implements DataGeneratorEntrypoint {
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-//        fabricDataGenerator.addProvider(MyTagGenerator::new);
-//        fabricDataGenerator.addProvider(MyModelGenerator::new);
-        fabricDataGenerator.addProvider(MyModEnglishLangProvider::new);
-        fabricDataGenerator.addProvider(MyRecipeGenerator::new);
-        fabricDataGenerator.addProvider(MyBlockLootTables::new);
+
+        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();//
+        pack.addProvider(MyModEnglishLangProvider::new);
+        pack.addProvider(MyRecipeGenerator::new);
+        pack.addProvider(MyBlockLootTables::new);
+
+        // .addProvider(MyModEnglishLangProvider::new);
+//        fabricDataGenerator.addProvider(MyRecipeGenerator::new);
+//        fabricDataGenerator.addProvider(MyBlockLootTables::new);
     }
 
     /**
      *
      */
-//    private static class MyTagGenerator extends FabricTagProvider<Item> {
-//        // We will create an item tag called "smelly_items".
-//        private static final TagKey<Item> SMELLY_ITEMS = TagKey.of(Registry.ITEM_KEY, new Identifier(DungeonBlocks.MOD_ID, "smelly_items"));
-//
-//
-//        public MyTagGenerator(FabricDataGenerator dataGenerator) {
-//            super(dataGenerator, Registry.ITEM);  // for versions 1.19.2 and below, use Registry.ITEM
-//        }
-//
-//        @Override
-//        protected void generateTags() {
-//            // This creates a tag builder, where we add slime balls, rotten flesh and everything in the minecraft:dirt item tag.
-//            getOrCreateTagBuilder(SMELLY_ITEMS)
-//                    .add(Items.SLIME_BALL)
-//                    .add(Items.ROTTEN_FLESH)
-//                    .addOptionalTag(ItemTags.DIRT);
-//            // This will automatically generate "assets/tutorial/tags/items/smelly_items.json" in the "generated" folder.
-//        }
-//    }
-
-    /**
-     *
-     */
-//    private static class MyModelGenerator extends FabricModelProvider {
-//        private MyModelGenerator(FabricDataGenerator generator) {
-//            super(generator);
-//        }
-//
-//        @Override
-//        public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-////            blockStateModelGenerator.registerSimpleCubeAll(Registration.STONE_FACADE);
-//            // why isn't this working?
-//            blockStateModelGenerator.blockStateCollector.accept(
-//                    MultipartBlockStateSupplier.create(Registration.STONE_FACADE)
-//                    .with(When.create()
-//                                    .set(Properties.FACING, Direction.NORTH)
-//                                    .set(IFacadeShapeBlock.SHAPE, FacadeShape.STRAIGHT)
-//                                    .set(Properties.WATERLOGGED, false),
-//                            BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R90)));
-//        }
-//
-//        @Override
-//        public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-////            itemModelGenerator.register(Registration.STONE_FACADE_ITEM, Models.GENERATED);
-//        }
-//    }
-
-    /**
-     *
-     */
     private static class MyModEnglishLangProvider extends FabricLanguageProvider {
-        private MyModEnglishLangProvider(FabricDataGenerator dataGenerator) {
+        private MyModEnglishLangProvider(FabricDataOutput dataGenerator) {
             // Specifying en_us is optional, by default is is en_us.
             super(dataGenerator, "en_us");
         }
@@ -603,7 +560,7 @@ public class DataGeneration implements DataGeneratorEntrypoint {
 
             // Load an existing language file.
             try {
-                Path existingFilePath = dataGenerator.getModContainer().findPath("assets/dungeonblocks/lang/empty_en_us.json").get();
+                Path existingFilePath = this.dataOutput.getModContainer().findPath("assets/dungeonblocks/lang/empty_en_us.json").get();
                 translationBuilder.add(existingFilePath);
             } catch (Exception e) {
                 throw new RuntimeException("Failed to add existing language file!", e);
@@ -614,20 +571,20 @@ public class DataGeneration implements DataGeneratorEntrypoint {
     /**
      *
      */
-    private static class MyRecipeGenerator extends FabricRecipeProvider {
+    public static class MyRecipeGenerator extends FabricRecipeProvider {
 
-        private MyRecipeGenerator(FabricDataGenerator generator) {
-            super(generator);
+        private MyRecipeGenerator(FabricDataOutput output) {
+            super(output);
         }
 
         public static void offerMyStonecuttingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input, int count) {
-            SingleItemRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(input), output, count).criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
+            SingleItemRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(input), RecipeCategory.BUILDING_BLOCKS, output, count).criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
                     .offerTo(exporter, RecipeProvider.getItemPath(output));
         }
 
         @Override
-        protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
-            // facade
+        public void generate(Consumer<RecipeJsonProvider> exporter) {
+             // facade
             offerMyStonecuttingRecipe(exporter, Registration.STONE_FACADE, Blocks.STONE, 2);
             offerMyStonecuttingRecipe(exporter, Registration.SMOOTH_STONE_FACADE, Blocks.SMOOTH_STONE,2);
             offerMyStonecuttingRecipe(exporter, Registration.COBBLESTONE_FACADE, Blocks.COBBLESTONE, 2);
@@ -1068,236 +1025,236 @@ public class DataGeneration implements DataGeneratorEntrypoint {
             offerMyStonecuttingRecipe(exporter, Registration.CRACKED_DEEPSLATE_TILES_PILLAR, Blocks.CRACKED_DEEPSLATE_TILES,1);
 
             // wall sconce
-            ShapedRecipeJsonBuilder.create(Registration.STONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.STONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.STONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.STONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.SMOOTH_STONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.SMOOTH_STONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.SMOOTH_STONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.SMOOTH_STONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.COBBLESTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.COBBLESTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.COBBLESTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.COBBLESTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.MOSSY_COBBLESTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.MOSSY_COBBLESTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.MOSSY_COBBLESTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.MOSSY_COBBLESTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.STONE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.STONE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.STONE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.STONE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.MOSSY_STONE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.MOSSY_STONE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.MOSSY_STONE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.MOSSY_STONE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CRACKED_STONE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CRACKED_STONE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CRACKED_STONE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CRACKED_STONE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CHISELED_STONE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CHISELED_STONE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CHISELED_STONE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CHISELED_STONE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.OBSIDIAN_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.OBSIDIAN_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.OBSIDIAN)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.OBSIDIAN_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.SMOOTH_SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.SMOOTH_SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.SMOOTH_SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.SMOOTH_SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CHISELED_SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CHISELED_SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CHISELED_SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CHISELED_SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CUT_SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CUT_SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CUT_SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CUT_SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.RED_SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.RED_SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.RED_SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.RED_SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.SMOOTH_RED_SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.SMOOTH_RED_SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.SMOOTH_RED_SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.SMOOTH_RED_SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CHISELED_RED_SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CHISELED_RED_SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CHISELED_RED_SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CHISELED_RED_SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CUT_RED_SANDSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CUT_RED_SANDSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CUT_RED_SANDSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CUT_RED_SANDSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.GRANITE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.GRANITE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.GRANITE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.GRANITE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.POLISHED_GRANITE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.POLISHED_GRANITE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.POLISHED_GRANITE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.POLISHED_GRANITE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.DIORITE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.DIORITE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.DIORITE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.DIORITE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.POLISHED_DIORITE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.POLISHED_DIORITE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.POLISHED_DIORITE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.POLISHED_DIORITE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.ANDESITE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.ANDESITE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.ANDESITE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.ANDESITE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.POLISHED_ANDESITE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.POLISHED_ANDESITE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.POLISHED_ANDESITE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.POLISHED_ANDESITE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.BLACKSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.BLACKSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.BLACKSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.BLACKSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.POLISHED_BLACKSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.POLISHED_BLACKSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.POLISHED_BLACKSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.POLISHED_BLACKSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CHISELED_POLISHED_BLACKSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CHISELED_POLISHED_BLACKSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.GILDED_BLACKSTONE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.GILDED_BLACKSTONE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.GILDED_BLACKSTONE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.GILDED_BLACKSTONE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.POLISHED_BLACKSTONE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CRACKED_POLISHED_BLACKSTONE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CRACKED_POLISHED_BLACKSTONE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.DEEPSLATE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.DEEPSLATE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.DEEPSLATE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.DEEPSLATE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.DEEPSLATE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.DEEPSLATE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.DEEPSLATE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.DEEPSLATE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CRACKED_DEEPSLATE_BRICKS)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CRACKED_DEEPSLATE_BRICKS_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.COBBLED_DEEPSLATE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.COBBLED_DEEPSLATE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.COBBLED_DEEPSLATE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.COBBLED_DEEPSLATE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CHISELED_DEEPSLATE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CHISELED_DEEPSLATE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CHISELED_DEEPSLATE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CHISELED_DEEPSLATE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.POLISHED_DEEPSLATE_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.POLISHED_DEEPSLATE_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.POLISHED_DEEPSLATE)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.POLISHED_DEEPSLATE_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.DEEPSLATE_TILES_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.DEEPSLATE_TILES_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.DEEPSLATE_TILES)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.DEEPSLATE_TILES_WALL_SCONCE)));
 
-            ShapedRecipeJsonBuilder.create(Registration.CRACKED_DEEPSLATE_TILES_WALL_SCONCE, 3)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.CRACKED_DEEPSLATE_TILES_WALL_SCONCE, 3)
                     .pattern("###").pattern(" i ").pattern(" S ")
                     .input('#', Items.TORCH).input('i', Items.IRON_INGOT).input('S', Items.CRACKED_DEEPSLATE_TILES)
                     .criterion(RecipeProvider.hasItem(Items.TORCH), RecipeProvider.conditionsFromItem(Items.TORCH))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.CRACKED_DEEPSLATE_TILES_WALL_SCONCE)));
 
             // grate
-            ShapedRecipeJsonBuilder.create(Registration.GRATE)
+            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Registration.GRATE)
                     .pattern("xnx")
                     .pattern("nnn")
                     .pattern("xnx")
@@ -1307,18 +1264,20 @@ public class DataGeneration implements DataGeneratorEntrypoint {
                     .criterion(RecipeProvider.hasItem(Items.IRON_NUGGET), RecipeProvider.conditionsFromItem(Items.IRON_NUGGET))
                     .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Registration.GRATE)));
         }
+
+
     }
 
     /**
      *
      */
     private static class MyBlockLootTables extends FabricBlockLootTableProvider {
-        public MyBlockLootTables(FabricDataGenerator dataGenerator) {
-            super(dataGenerator);
+        public MyBlockLootTables(FabricDataOutput dataOutput) {
+            super(dataOutput);
         }
 
         @Override
-        protected void generateBlockLootTables() {
+        public void generate() {
             // facade
             addDrop(Registration.STONE_FACADE, drops(Registration.STONE_FACADE));
             addDrop(Registration.SMOOTH_STONE_FACADE, drops(Registration.SMOOTH_STONE_FACADE));
