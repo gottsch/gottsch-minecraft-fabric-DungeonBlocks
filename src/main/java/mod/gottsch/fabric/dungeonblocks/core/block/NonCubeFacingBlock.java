@@ -66,7 +66,7 @@ public class NonCubeFacingBlock extends FacingBlock implements Waterloggable {
         BlockPos blockPos = ctx.getBlockPos();
         FluidState fluidState = ctx.getWorld().getFluidState(blockPos);
 
-        BlockState blockState = this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+        BlockState blockState = this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
         blockState.with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
         return blockState;
     }
