@@ -70,7 +70,7 @@ public class DataGeneration implements DataGeneratorEntrypoint {
 
         @Override
         public void generateTranslations(TranslationBuilder translationBuilder) {
-            translationBuilder.add(Registration.ITEM_GROUP , "Dungeon Blocks");
+//            translationBuilder.add(Registration.ITEM_GROUP , "Dungeon Blocks");
 
             translationBuilder.add(Registration.STONE_FACADE , "Stone Facade");
             translationBuilder.add(Registration.SMOOTH_STONE_FACADE, "Smooth Stone Facade");
